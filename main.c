@@ -3,28 +3,28 @@
 #include<string.h>
 
 
- /*int main() {
+ int main() {
     
    
-    FILE *rotCyph;
+   /* FILE *rotCyph;
     FILE *subCyph;
     FILE *encryptOutput;
     
     rotCyph = fopen("rotCyph.text", "r");
     subCyph = fopen("subCyph.text", " ");
     
-    //int rotationCypher(int key, /*message*/);
+    //int rotationCypher(int key, message);
     
-    //int rotationEncryption(int key, /*message*/);
+    //int rotationEncryption(int key, message);
     
-    //int substitutionCypher(, /*message*/);
+    //int substitutionCypher(message);
     
-    //int substitutionEncryption( /*message*/);
+    //int substitutionEncryption( message);
 
     
     
-   /* printf("Press 1 for rotation cypher\nPress 2 for rotation encryption\nPress 3 for substitution cypher\nPress 4 for substitution encryption\n ");
-    scanf("%d", &programSelection);
+    printf("Press 1 for rotation cypher\nPress 2 for rotation encryption\nPress 3 for substitution cypher\nPress 4 for substitution encryption\n ");
+    scanf("%d", &programSelection); 
     
     switch(programSelection) {
         
@@ -51,30 +51,12 @@
          
         default:
             printf("invalid number please re-run program\n" );
-    }
+    } */
     
-    
-    
-    
-    
-    char message[100];                                         the message that will be deciphered
-    int i;                                                    itialise i which will be the index of the array letters
-    int j = strlen(message);                                   setj to = the amount of characters in the array message
-
-    scanf("%s", message);
-    printf("Found text %s\n", message);
-    printf("text length %d\n", &j);
-    
-    for(i = 0; i <= j; i++) {
-        
-    } 
  
-  
-} */
 
 
-int main() {
-    int i;
+   /* int i;
     int key = 1;    //initialise variables and message
     
     char message[] = "ABCDEFGHIJKLMNOP";
@@ -86,7 +68,34 @@ int main() {
     
     printf(": %s\n", message); //prints remaining message.
     
-    return 0;
+     return 0; */
+   
+    FILE *input;
+    FILE *output;
+    int letter = 0;
+   // int i;
+    //int key;
+ 
+    input = fopen("input.txt", "r");
+    output = fopen("output.txt", "w");
+   
+    while(feof(input) == 0) {
+        char c;      
+        fscanf(input, "%c", &c);
+      
+        if(c == 'E') {
+        letter++;
+        fprintf(output, "%c",  c);
+        
+       }
+        
+        printf("%d\n", letter);
+        
+
+   }
+   
+
+   
 }
 
 
