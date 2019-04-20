@@ -1,16 +1,17 @@
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
 
-int main() {
+ /*int main() {
     
-    /*
+   
     FILE *rotCyph;
     FILE *subCyph;
     FILE *encryptOutput;
     
     rotCyph = fopen("rotCyph.text", "r");
-    subCyph = fopen("subCyph.text", " ");   */
+    subCyph = fopen("subCyph.text", " ");
     
     //int rotationCypher(int key, /*message*/);
     
@@ -21,13 +22,8 @@ int main() {
     //int substitutionEncryption( /*message*/);
 
     
-    //char letters[26] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};  
     
-    //int key;
-    int programSelection;
-    char message[] = {"Brannen has an above average sized "};
-    
-    printf("Press 1 for rotation cypher\nPress 2 for rotation encryption\nPress 3 for substitution cypher\nPress 4 for substitution encryption\n ");
+   /* printf("Press 1 for rotation cypher\nPress 2 for rotation encryption\nPress 3 for substitution cypher\nPress 4 for substitution encryption\n ");
     scanf("%d", &programSelection);
     
     switch(programSelection) {
@@ -61,9 +57,9 @@ int main() {
     
     
     
-    /*char message[100];                                        // the message that will be deciphered
-    int i;                                                    //initialise i which will be the index of the array letters
-    int j = strlen(message);                                  // sets j to = the amount of characters in the array message
+    char message[100];                                         the message that will be deciphered
+    int i;                                                    itialise i which will be the index of the array letters
+    int j = strlen(message);                                   setj to = the amount of characters in the array message
 
     scanf("%s", message);
     printf("Found text %s\n", message);
@@ -71,10 +67,26 @@ int main() {
     
     for(i = 0; i <= j; i++) {
         
-    } */
-  
+    } 
  
-
-
   
+} */
+
+
+int main() {
+    int i;
+    int key = 1;    //initialise variables and message
+    
+    char message[] = "ABCDEFGHIJKLMNOP";
+    printf("%s", message);  //prints message without encryption
+    
+    for(i = 0; i < strlen(message); i++) { // while the index is less than the length of the message then index++
+        message[i] = message[i] + key;  //index of message = index of message + key. This is the actual encryion
+    }
+    
+    printf(": %s\n", message); //prints remaining message.
+    
+    return 0;
 }
+
+
