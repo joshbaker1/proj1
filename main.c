@@ -10,8 +10,8 @@
     FILE *subCyph;
     FILE *encryptOutput;
     
-    rotCyph = fopen("rotCyph.text", "r");
-    subCyph = fopen("subCyph.text", " ");
+    rotCyph = fopen("rotCyph.txt", "r");
+    subCyph = fopen("subCyph.txt", " ");
     
     //int rotationCypher(int key, message);
     
@@ -72,10 +72,10 @@
    
     FILE *input;
     FILE *output;
-    int letter = 0;
-    int i = 0;
+    int letterCount = 0;
+    //int i = 0;
     
-    letterArr[26] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J" "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
+    //char letterArr[] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J" "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
  
     input = fopen("input.txt", "r");
     output = fopen("output.txt", "w");
@@ -84,16 +84,15 @@
         char c;      
         fscanf(input, "%c", &c);
       
-        if(c == 'E') {
-        letter++;
-        fprintf(output, "%c",  c);
+        if(c == 'E') 
+            letterCount++;
+            fprintf(output, "%c",  c);
         
-        
-       }
+       
 
    }
    
-    rintf("there are this many E's: %d\n", letter);   
+    printf("there are this many E's: %d\n", letterCount);   
    
 }
 
