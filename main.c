@@ -73,8 +73,9 @@
     FILE *input;
     FILE *output;
     int letter = 0;
-   // int i;
-    //int key;
+    int i = 0;
+    
+    letterArr[26] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J" "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
  
     input = fopen("input.txt", "r");
     output = fopen("output.txt", "w");
@@ -87,14 +88,12 @@
         letter++;
         fprintf(output, "%c",  c);
         
+        
        }
-        
-        printf("%d\n", letter);
-        
 
    }
    
-
+    rintf("there are this many E's: %d\n", letter);   
    
 }
 
