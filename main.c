@@ -55,7 +55,7 @@
     
  
 
-
+//_______________________________ROTATION ENCRYPTION____________________________
    /* int i;
     int key = 1;    //initialise variables and message
     
@@ -69,15 +69,16 @@
     printf(": %s\n", message); //prints remaining message.
     
      return 0; */
-   
+
+  /*_______________________________ROTATION DECRYPTION____________________________ 
     FILE *input;
     FILE *output;
     int letterCount = 0;
     //int temp;
-    int i = 1;
+    //int i = 1;
     //int mostUsedLetter = 0;
     
-    char letterArr[] = {"ABCDEFGHIIJKLMNOPQRSTUVWXYZ"};
+    //char letterArr[] = {"ABCDEFGHIIJKLMNOPQRSTUVWXYZ"};
  
     input = fopen("input.txt", "r");
     output = fopen("output.txt", "w");
@@ -87,20 +88,45 @@
             char c;
             fscanf(input, "%c", &c);
          
-            if(c == 'E')         
+            if(c == 'E') 
                 letterCount++;
+            fprintf(output, "%c",  c);
+            
                 //printf("1: %d\n", letterCount);
                 //i++;
                 //temp = letterCount; 
                 
-                //if (temp > mostUsedLetter) {
-                    
-                //    mostUsedLetter = temp;
-                //}             
-            
-          
-            fprintf(output, "%c",  c);
-     }
+                //if (temp > mostUsedLetter)  
+                //    mostUsedLetter = temp;}           
+    }
+    printf("E Count: %d\n", letterCount);  */
+   
+//_______________________________SUBSTITUTION ENCRYPTION____________________________     
+    int i;
+    int randCount = 0;
+    char letterArr[] = {"ABCDEFGHIIJKLMNOPQRSTUVWXYZ"};
+    char message[] = {"ABCDEFGHIJKLMNOP"};
+    time_t t;
+    randNoCount = 5;
+    
+    //printf("%s", message);
+    
 
-         printf("E Count: %d\n", letterCount);    
+
+    srand((unsigned) time(&t));
+
+
+    for( i = 0 ; i < randNoCount ; i++ ) {
+        printf("%d\n", rand() % 26);
+   }
+    
+    for(i = 0; i < strlen(message); i++) { //ENCRIPTION BELOW
+        
+        
+    }
+    
+    //printf("Encrypted Message: %s\n", message); 
+    
+    return 0; 
+
 }
