@@ -73,27 +73,34 @@
     FILE *input;
     FILE *output;
     int letterCount = 0;
-    //int i = 0;
+    //int temp;
+    int i = 1;
+    //int mostUsedLetter = 0;
     
-    //char letterArr[] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J" "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+    char letterArr[] = {"ABCDEFGHIIJKLMNOPQRSTUVWXYZ"};
  
     input = fopen("input.txt", "r");
     output = fopen("output.txt", "w");
    
-    while(feof(input) == 0) {
-        char c;      
-        fscanf(input, "%c", &c);
-      
-        if(c == 'E') 
-            letterCount++;
+    //while (i <= 26){
+        while(feof(input) == 0) {
+            char c;
+            fscanf(input, "%c", &c);
+         
+            if(c == 'E')         
+                letterCount++;
+                //printf("1: %d\n", letterCount);
+                //i++;
+                //temp = letterCount; 
+                
+                //if (temp > mostUsedLetter) {
+                    
+                //    mostUsedLetter = temp;
+                //}             
+            
+          
             fprintf(output, "%c",  c);
-        
-       
+     }
 
-   }
-   
-    printf("there are this many E's: %d\n", letterCount);   
-   
+         printf("E Count: %d\n", letterCount);    
 }
-
-
