@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include <time.h>
 
 
  int main() {
@@ -20,7 +21,6 @@
     //int substitutionCypher(message);
     
     //int substitutionEncryption( message);
-
     
     
     printf("Press 1 for rotation cypher\nPress 2 for rotation encryption\nPress 3 for substitution cypher\nPress 4 for substitution encryption\n ");
@@ -103,30 +103,34 @@
    
 //_______________________________SUBSTITUTION ENCRYPTION____________________________     
     int i;
-    int randCount = 0;
     char letterArr[] = {"ABCDEFGHIIJKLMNOPQRSTUVWXYZ"};
-    char message[] = {"ABCDEFGHIJKLMNOP"};
-    time_t t;
-    randNoCount = 5;
+    char subKey[] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
+    int length;
+
+    printf("enter message for ciphering nig: ");
+
+    length = strlen(message);
+    printf("string length: %d\n", length);
+    printf("unciphered message:%s\n", message);
+
+
     
-    //printf("%s", message);
     
-
-
-    srand((unsigned) time(&t));
-
-
-    for( i = 0 ; i < randNoCount ; i++ ) {
-        printf("%d\n", rand() % 26);
-   }
-    
-    for(i = 0; i < strlen(message); i++) { //ENCRIPTION BELOW
+    for(i = 0; i <= length; i++) { //ENCRIPTION BELOW
         
         
     }
+    
+ 
+  
+   
     
     //printf("Encrypted Message: %s\n", message); 
     
     return 0; 
 
 }
+
+
+
+
