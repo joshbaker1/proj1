@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include <time.h>
 
 
  int main() {
@@ -102,24 +101,49 @@
     printf("E Count: %d\n", letterCount);  */
    
 //_______________________________SUBSTITUTION ENCRYPTION____________________________     
-    int i;
+    //int i;
     char letterArr[] = {"ABCDEFGHIIJKLMNOPQRSTUVWXYZ"};
     char subKey[] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
     int length;
+    char message[] = {"HELLOWORLD"};
+    //int count = 0;
+    
 
-    printf("enter message for ciphering nig: ");
-
+    //printf("enter message for ciphering: \n");
+    //gets(message);
+    
+    
     length = strlen(message);
     printf("string length: %d\n", length);
-    printf("unciphered message:%s\n", message);
+    printf("unciphered message: %s\n", message);
 
+    int i = 0;
+    printf("ascii of first letter: %d\n", message[i]);
+    
+    //for(int i = 0; i <= length; i++) { //ENCRIPTION BELOW
+    int j = 0;
+    while (j <= 26){
+        if (message[i] == letterArr[j]){
+            printf("found a letter\n");
+            i++;
+            j=0;
+        }
 
-    
-    
-    for(i = 0; i <= length; i++) { //ENCRIPTION BELOW
-        
-        
+        j++;
     }
+
+
+        
+        /*int j = 0;
+        if (message[i] == letterArr[j]) {
+            printf("test: %s\n", &message[i]);
+            message[i] = subKey[j];
+            j++;
+        } else {
+            j++;
+        } */
+    //} 
+    printf("ciphered message: %s\n", message);
     
  
   
