@@ -101,56 +101,28 @@
     printf("E Count: %d\n", letterCount);  */
    
 //_______________________________SUBSTITUTION ENCRYPTION____________________________     
-    //int i;
-    char letterArr[] = {"ABCDEFGHIIJKLMNOPQRSTUVWXYZ"};
-    char subKey[] = {"QWERTYUIOPASDFGHJKLZXCVBNM"};
-    int length;
-    char message[] = {"HELLOWORLD"};
-    //int count = 0;
+    int i = 0;  // index counter for the message array
+    int j = 0;  // index counter for the alphabet and key arrays
+    char alphabetArr[] = {"ABCDEFGHIIJKLMNOPQRSTUVWXYZ "};  // alphabet array
+    char Key[] = {"QWERTYUIOPASDFGHJKLZXCVBNM "};  // key array
+    char message[] = {"HELLO WORLD"};  // hardcoded message
     
-
-    //printf("enter message for ciphering: \n");
-    //gets(message);
-    
-    
-    length = strlen(message);
-    printf("string length: %d\n", length);
+    //printf("string length: %d\n", length);
     printf("unciphered message: %s\n", message);
-
-    int i = 0;
     printf("ascii of first letter: %d\n", message[i]);
     
-    //for(int i = 0; i <= length; i++) { //ENCRIPTION BELOW
-    int j = 0;
-    while (j <= 26){
+    while (j <= 27){
         if (message[i] == letterArr[j]){
-            printf("found a letter\n");
+            printf("index: %d. letter: %c\n", i, message[i]);
             i++;
-            j=0;
+            j = 0;
         }
-
         j++;
     }
 
-
-        
-        /*int j = 0;
-        if (message[i] == letterArr[j]) {
-            printf("test: %s\n", &message[i]);
-            message[i] = subKey[j];
-            j++;
-        } else {
-            j++;
-        } */
-    //} 
     printf("ciphered message: %s\n", message);
     
- 
-  
-   
-    
-    //printf("Encrypted Message: %s\n", message); 
-    
+
     return 0; 
 
 }
