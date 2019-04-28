@@ -69,59 +69,37 @@
     
      return 0; */
 
-  /*_______________________________ROTATION DECRYPTION____________________________ 
-    FILE *input;
-    FILE *output;
-    int letterCount = 0;
-    //int temp;
-    //int i = 1;
-    //int mostUsedLetter = 0;
-    
-    //char letterArr[] = {"ABCDEFGHIIJKLMNOPQRSTUVWXYZ"};
- 
-    input = fopen("input.txt", "r");
-    output = fopen("output.txt", "w");
-   
-    //while (i <= 26){
-        while(feof(input) == 0) {
-            char c;
-            fscanf(input, "%c", &c);
-         
-            if(c == 'E') 
-                letterCount++;
-            fprintf(output, "%c",  c);
-            
-                //printf("1: %d\n", letterCount);
-                //i++;
-                //temp = letterCount; 
-                
-                //if (temp > mostUsedLetter)  
-                //    mostUsedLetter = temp;}           
-    }
-    printf("E Count: %d\n", letterCount);  */
+  //_______________________________ROTATION DECRYPTION____________________________ 
+
    
 //_______________________________SUBSTITUTION ENCRYPTION____________________________     
     int i = 0;  // index counter for the message array
     int j = 0;  // index counter for the alphabet and key arrays
-    char alphabetArr[] = {"ABCDEFGHIIJKLMNOPQRSTUVWXYZ "};  // alphabet array
-    char Key[] = {"QWERTYUIOPASDFGHJKLZXCVBNM "};  // key array
+    char alphabetArr[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ "};  // alphabet array
+    char Key[] =         {"QWERTYUIOPASDFGHJKLZXCVBNM "};  // key array
     char message[] = {"HELLO WORLD"};  // hardcoded message
+    int length;  // an int that holds the length of the message array
     
     //printf("string length: %d\n", length);
     printf("unciphered message: %s\n", message);
-    printf("ascii of first letter: %d\n", message[i]);
+    //printf("ascii of first letter: %d\n", message[i]);
+    length = strlen(message);
     
-    while (j <= 27){
-        if (message[i] == letterArr[j]){
-            printf("index: %d. letter: %c\n", i, message[i]);
+    while ( j <= 27 && i <= length ){
+        if (message[i] == alphabetArr[j]){
+            //printf("i:%d %c ", i, message[i]);
+            
+            //printf("j:%d", j);
+            message[i] = Key[j];
+             
+            //printf( "   %c\n", message[i]);
             i++;
             j = 0;
-        }
+        } 
         j++;
     }
 
     printf("ciphered message: %s\n", message);
-    
 
     return 0; 
 
