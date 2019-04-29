@@ -57,10 +57,9 @@
     
  
 
-//_______________________________ROTATION ENCRYPTION____________________________
+/*_______________________________ROTATION ENCRYPTION____________________________
     int i;
     int key = 1;    //initialise variables and message
-    
     char message[1000];
     
     printf("Please enter your message for ciphering: ");
@@ -76,12 +75,14 @@
     printf("Rotation Cipher Results: %s\n", message); //prints remaining message.
     
      return 0; 
-}
+}*/
   /*_______________________________ROTATION DECRYPTION____________________________ 
     int i;
     int key = 1;    //initialise variables and message
+    char message[1000];
     
-    char message[] = "BT EG";
+    printf("Please enter your message for ciphering: ");
+    scanf("%s/n", message);
     
     for(i = 0; i < strlen(message); i++) { // while the index is less than the length of the message then index++
         if (message[i] == 32){
@@ -93,37 +94,62 @@
     printf("Rotation Cipher Results: %s\n", message); //prints remaining message.
     
      return 0; 
-}
+} */
 
    
 //_______________________________SUBSTITUTION ENCRYPTION____________________________     
-    int i = 0;  // index counter for the message array
+    
+   /* int i = 0;  // index counter for the message array
     int j = 0;  // index counter for the alphabet and key arrays
     char alphabetArr[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ "};  // alphabet array
-    char Key[] =         {"QWERTYUIOPASDFGHJKLZXCVBNM "};  // key array
-    char message[] = {"HELLO WORLD"};  // hardcoded message
+    char Key[] = {"QWERTYUIOPASDFGHJKLZXCVBNM "};  // key array
+    char message[1000];  
     int length;  // an int that holds the length of the message array
     
-    
-    printf("unciphered message: %s\n", message);
+    printf("Enter message for Sub ciphering: ");
+    scanf("%s", message);
     
     length = strlen(message);
     
     while ( j <= 27 && i <= length ){
-        if (message[i] == alphabetArr[j]){   
-            message[i] = Key[j]; 
+        if (message[i] == alphabetArr[j]){
+            message[i] = Key[j];
             i++;
             j = 0;
-        } 
+        }
         j++;
     }
-
     printf("ciphered message: %s\n", message);
 
-    return 0; 
+    return 0;
+} */
 
+//_______________________________SUBSTITUTION DECRYPTION____________________________ 
+    
+    int i = 0;  // index counter for the message array
+    int j = 0;  // index counter for the alphabet and key arrays
+    char alphabetArr[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZ "};  // alphabet array
+    char Key[] = {"QWERTYUIOPASDFGHJKLZXCVBNM "};  // key array
+    char message[1000];  
+    int length;  // an int that holds the length of the message array
+    
+    printf("Enter message for Sub deciphering: ");
+    scanf("%s", message);
+    
+    length = strlen(message);
+    
+    while ( j <= 27 && i <= length ){
+        if (message[i] == Key[j]){
+            message[i] = alphabetArr[j];
+            i++;
+            j = 0;
+        }
+        j++;
+    }
+    printf("ciphered message: %s\n", message);
+
+    return 0;
 }
-*/
 
 
 
