@@ -6,12 +6,12 @@
  int main() {
     
    
-   /* FILE *rotCyph;
+    /*FILE *rotCyph;
     FILE *subCyph;
     FILE *encryptOutput;
     
     rotCyph = fopen("rotCyph.txt", "r");
-    subCyph = fopen("subCyph.txt", " ");
+    subCyph = fopen("subCyph.txt", " "); */
     
     //int rotationCypher(int key, message);
     
@@ -20,6 +20,7 @@
     //int substitutionCypher(message);
     
     //int substitutionEncryption( message);
+    /*int programSelection;
     
     
     printf("Press 1 for rotation cypher\nPress 2 for rotation encryption\nPress 3 for substitution cypher\nPress 4 for substitution encryption\n ");
@@ -29,7 +30,7 @@
         
         case 1:
             printf("You selected rotation cypher\n" );
-            printf("%s\n", message);
+            
             return 1;
             break;
              
@@ -50,26 +51,49 @@
          
         default:
             printf("invalid number please re-run program\n" );
-    } */
+    }
+} */
+
     
  
 
 //_______________________________ROTATION ENCRYPTION____________________________
-   /* int i;
+    int i;
     int key = 1;    //initialise variables and message
     
-    char message[] = "ABCDEFGHIJKLMNOP";
-    printf("%s", message);  //prints message without encryption
+    char message[1000];
+    
+    printf("Please enter your message for ciphering: ");
+    scanf("%s/n", message);
     
     for(i = 0; i < strlen(message); i++) { // while the index is less than the length of the message then index++
-        message[i] = message[i] + key;  //index of message = index of message + key. This is the actual encryion
+        if (message[i] == 32){
+            i++;
+        }
+        message[i] = message[i] + key;  //index of message = index of message + key. This is the actual encryption
     }
     
-    printf(": %s\n", message); //prints remaining message.
+    printf("Rotation Cipher Results: %s\n", message); //prints remaining message.
     
-     return 0; */
+     return 0; 
+}
+  /*_______________________________ROTATION DECRYPTION____________________________ 
+    int i;
+    int key = 1;    //initialise variables and message
+    
+    char message[] = "BT EG";
+    
+    for(i = 0; i < strlen(message); i++) { // while the index is less than the length of the message then index++
+        if (message[i] == 32){
+            i++;
+        }
+        message[i] = message[i] - key;  //index of message = index of message + key. This is the actual encryption
+    }
 
-  //_______________________________ROTATION DECRYPTION____________________________ 
+    printf("Rotation Cipher Results: %s\n", message); //prints remaining message.
+    
+     return 0; 
+}
 
    
 //_______________________________SUBSTITUTION ENCRYPTION____________________________     
@@ -80,19 +104,14 @@
     char message[] = {"HELLO WORLD"};  // hardcoded message
     int length;  // an int that holds the length of the message array
     
-    //printf("string length: %d\n", length);
+    
     printf("unciphered message: %s\n", message);
-    //printf("ascii of first letter: %d\n", message[i]);
+    
     length = strlen(message);
     
     while ( j <= 27 && i <= length ){
-        if (message[i] == alphabetArr[j]){
-            //printf("i:%d %c ", i, message[i]);
-            
-            //printf("j:%d", j);
-            message[i] = Key[j];
-             
-            //printf( "   %c\n", message[i]);
+        if (message[i] == alphabetArr[j]){   
+            message[i] = Key[j]; 
             i++;
             j = 0;
         } 
@@ -104,7 +123,7 @@
     return 0; 
 
 }
-
+*/
 
 
 
